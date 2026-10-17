@@ -1,0 +1,6 @@
+import type { Metadata } from 'next';
+import Link from 'next/link';
+import { ArrowUpRight, Star } from 'lucide-react';
+import { ReviewForm } from '@/components/review-form';
+export const metadata:Metadata={title:'Reviews | SVU Developers Private Limited',description:'Read example visitor feedback and share your experience with SVU Developers Private Limited.'};
+export default function ReviewsPage(){return <main className="page-main reviews-page"><section className="page-hero"><div className="container"><span className="eyebrow"><span className="eyebrow-line"/> VOICES & EXPERIENCES</span><h1>Every journey has<br/><em>a story to tell.</em></h1><p>Share your experience with our property discovery website and enquiry journey.</p><div className="reviews-hero-meta"><span><Star size={15} fill="currentColor"/> Your feedback matters</span><Link href="/contact" className="text-link">Contact our team <ArrowUpRight size={15}/></Link></div></div></section><section className="section reviews-section"><div className="container"><div className="section-head"><div><span className="eyebrow"><span className="eyebrow-line"/> COMMUNITY FEEDBACK</span><h2>Reviews and feedback</h2></div><span className="reviews-count">Visitor stories</span></div><ReviewForm/></div></section></main>}

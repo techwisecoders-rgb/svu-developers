@@ -46,3 +46,49 @@
 @media(max-width:900px){.cinematic-grid{grid-template-columns:1fr;gap:45px}.cinematic-sticky{position:relative;top:auto}.cinematic-photo{min-height:520px}.story-beat{min-height:0;margin-bottom:25px;padding-bottom:32px}.cinematic-story{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}.story-beat h2{font-size:clamp(30px,4vw,45px)}}
 @media(max-width:640px){.floating-contact{right:13px;bottom:14px;gap:9px}.floating-contact a{width:48px;min-width:48px;height:48px}.floating-contact svg{width:20px;height:20px}.cinematic-section{padding:68px 0}.cinematic-photo{min-height:440px}.cinematic-story{grid-template-columns:1fr;gap:0}.story-beat{padding:16px 0 30px;margin:0 0 20px}.story-beat h2{font-size:43px}.cinematic-photo-foot{font-size:8px;letter-spacing:.07em}.scroll-progress{height:2px}}
 @media(prefers-reduced-motion:reduce){.hero-parallax-image{transform:none!important}.cinematic-photo:after,.floating-contact a{transition:none!important}}
+
+/* Final navigation, mobile motion and reviews refinements */
+.nav-links>a[href="/"]{display:inline-flex;align-items:center;gap:6px}
+.nav-links>a[href="/"] svg{width:15px;height:15px;flex-shrink:0}
+.floating-reviews{position:fixed;left:22px;bottom:22px;z-index:121;display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:50px;padding:0 18px;border-radius:999px;background:#142b40;color:#fff;border:1px solid rgba(198,165,107,.8);box-shadow:0 10px 30px #07111d35;font-size:12px;font-weight:700;letter-spacing:.02em;transition:transform .25s,box-shadow .25s,background .25s;animation:floatIn .6s ease both}
+.floating-reviews svg{color:#e1c68f;width:17px;height:17px}
+.floating-reviews:hover{transform:translateY(-4px);box-shadow:0 15px 35px #07111d45;background:#203e56}
+.cursor-halo{opacity:0;transition:opacity .2s,width .2s ease,height .2s ease,background .2s ease;will-change:transform;pointer-events:none}
+.cursor-halo.cursor-halo-visible{opacity:.95}
+.cursor-halo.cursor-active{width:54px;height:54px;background:rgba(225,198,143,.18);opacity:1}
+.scroll-reveal-item{opacity:0;transform:translateY(24px);transition:opacity .7s cubic-bezier(.22,1,.36,1),transform .7s cubic-bezier(.22,1,.36,1)}
+.scroll-reveal-item.scroll-reveal-visible{opacity:1;transform:translateY(0)}
+.reviews-page .page-hero{background:linear-gradient(130deg,#0b1725 0%,#17334a 100%);color:#f7f2e8;padding:150px 0 78px}
+.reviews-page .page-hero h1{font-size:clamp(48px,7vw,82px);margin:24px 0 18px}
+.reviews-page .page-hero p{max-width:560px;color:#d0d5d5;font-size:15px;line-height:1.9}
+.reviews-hero-meta{display:flex;align-items:center;justify-content:space-between;gap:20px;margin-top:28px;max-width:620px}
+.reviews-hero-meta>span{display:flex;align-items:center;gap:8px;font-size:11px;letter-spacing:.04em;color:#e1c68f}
+.reviews-section{padding-top:70px}
+.reviews-count{font-size:11px;color:#7d8588}
+.reviews-layout{display:grid;grid-template-columns:1.15fr .85fr;gap:28px;align-items:start}
+.reviews-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}
+.review-card{padding:24px;background:#fffefa;border:1px solid #e8e2d8;min-width:0;transition:transform .3s,box-shadow .3s}
+.review-card:hover{transform:translateY(-4px);box-shadow:0 15px 30px #0b17250d}
+.review-card:first-child{grid-column:1/-1}
+.review-stars{display:flex;gap:4px;color:#b18b4c}
+.review-card>p{font:400 19px/1.6 var(--serif);margin:17px 0 24px;color:#263644;overflow-wrap:anywhere}
+.review-author{display:flex;flex-direction:column;gap:3px;border-top:1px solid #ece6dc;padding-top:13px}
+.review-author strong{font-size:11px}.review-author span{font-size:9px;color:#858b8d}
+.review-note{grid-column:1/-1;font-size:10px;line-height:1.8;color:#7c8589;margin:0}
+.review-form-card{background:#f4efe6;border:1px solid #e3d8c5;padding:30px;display:flex;flex-direction:column;gap:17px;min-width:0}
+.review-form-card h2{font-size:34px;margin:0}.review-form-card>p{font-size:12px;color:#697278;line-height:1.8;margin:0}
+.review-form-card label,.rating-field legend{display:flex;flex-direction:column;gap:8px;font-size:10px;letter-spacing:.08em;text-transform:uppercase;font-weight:700;color:#667078}
+.review-form-card input,.review-form-card textarea{width:100%;border:1px solid #d8d0c2;background:#fffdf9;padding:12px 13px;color:#172536;outline:none;font-size:13px;letter-spacing:0;text-transform:none;font-weight:400;resize:vertical;min-width:0}
+.review-form-card input:focus,.review-form-card textarea:focus{border-color:#b18b4c;box-shadow:0 0 0 3px #c6a56b20}
+.rating-field{border:0;margin:0;padding:0}.rating-field legend{margin-bottom:7px}.rating-picker{display:flex;gap:5px}.rating-picker button{display:grid;place-items:center;border:1px solid #d8d0c2;background:#fffdf9;color:#b8b3a8;width:39px;height:39px;border-radius:8px;transition:transform .2s,color .2s,border-color .2s}.rating-picker button:hover{transform:translateY(-2px)}.rating-picker button.rating-selected{color:#b18b4c;border-color:#c6a56b;background:#fff8e9}
+.review-submit{align-self:flex-start;border:0}.review-success{display:flex;align-items:center;gap:7px;color:#2b704e!important;font-weight:700}.review-success svg{flex-shrink:0}
+@media(max-width:1000px){.nav-inner{gap:16px}.nav-links{gap:15px;font-size:11px}.nav-cta{padding:9px 10px}.reviews-layout{grid-template-columns:1fr}.reviews-list{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:780px){.nav-links{max-height:calc(100svh - 78px);overflow-y:auto;overscroll-behavior:contain}.floating-reviews{left:12px;bottom:14px;min-height:46px;padding:0 14px;font-size:11px}.floating-contact{right:12px;bottom:12px}.scroll-reveal-item{transform:translateY(18px);transition-duration:.55s}.reviews-page .page-hero{padding:125px 0 58px}.reviews-page .page-hero h1{font-size:clamp(43px,10vw,62px)}.reviews-layout{gap:22px}.review-form-card{padding:22px}.review-card{padding:19px}.review-card>p{font-size:17px}.reviews-section{padding-top:55px}}
+@media(max-width:480px){.reviews-list{grid-template-columns:1fr}.review-card:first-child{grid-column:auto}.reviews-hero-meta{align-items:flex-start;flex-direction:column}.floating-reviews{left:10px;bottom:12px;min-height:44px;padding:0 12px}.floating-reviews span{display:inline}.floating-contact{right:10px;bottom:10px}.floating-contact a{width:46px;min-width:46px;height:46px}.site-footer{padding-bottom:80px}}
+@media(prefers-reduced-motion:reduce){.scroll-reveal-item{opacity:1;transform:none;transition:none}.floating-reviews,.review-card,.rating-picker button{transition:none}.cursor-halo{display:none!important}}
+
+/* Requested final polish: Home text stays white; use supplied WhatsApp artwork. */
+.nav-links>a[href="/"],.nav-links>a[href="/"].active,.nav-links>a[href="/"]:hover{color:#fff!important;opacity:1}
+.floating-contact a.float-whatsapp{padding:0;min-width:54px;width:54px;height:54px;background:#fff;border:1px solid #ffffffaa;overflow:hidden}
+.floating-contact a.float-whatsapp img{display:block;width:100%;height:100%;object-fit:contain}
+@media(max-width:780px){.floating-contact a.float-whatsapp{min-width:48px;width:48px;height:48px;padding:0}}
